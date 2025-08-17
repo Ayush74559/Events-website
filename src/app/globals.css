@@ -1,22 +1,37 @@
 @import "tailwindcss";
+@import "../styles/events.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ededed;
+  --highlight-purple: #a259ff;
+  --highlight-teal: #00ffe7;
+  --gradient-main: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+  --gradient-accent: linear-gradient(90deg, #a259ff 0%, #00ffe7 100%);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+body {
+  background: var(--gradient-main);
+  color: var(--foreground);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.bg-gradient-main {
+  background: var(--gradient-main);
+}
+.bg-gradient-accent {
+  background: var(--gradient-accent);
+}
+.text-neon-purple {
+  color: var(--highlight-purple);
+}
+.text-neon-teal {
+  color: var(--highlight-teal);
+}
+.border-neon-purple {
+  border-color: var(--highlight-purple);
+}
+.border-neon-teal {
+  border-color: var(--highlight-teal);
 }
 
 body {
