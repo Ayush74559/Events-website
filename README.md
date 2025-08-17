@@ -235,7 +235,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For support or inquiries about photography services:
 - **WhatsApp**: [+91 74559 32245](https://wa.me/917455932245?text=Hi! I'm interested in your photography services. Can you please share more details?)
-- **Email**: info@dehradunphotography.com
+- **Email**: Aayush1628jaat@gmai.com
 - **Instagram**: [@ayush_chaudhary_032](https://www.instagram.com/ayush_chaudhary_032/)
 
 ---
