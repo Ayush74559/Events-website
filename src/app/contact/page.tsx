@@ -17,6 +17,7 @@ export default function ContactPage() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [simulated, setSimulated] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,6 +30,7 @@ export default function ContactPage() {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data?.error || "Failed to send message");
+      setSimulated(!!data?.simulated);
       setIsSubmitted(true);
       setFormData({
         name: '',
@@ -225,6 +227,11 @@ export default function ContactPage() {
                 <p className="text-gray-600 dark:text-gray-400">
                   Thank you for reaching out. We&apos;ll contact you within 24 hours to discuss your photography needs.
                 </p>
+                {simulated && (
+                  <p className="mt-4 text-sm text-amber-600 dark:text-amber-400">
+                    Note: Email sending was simulated in development because RESEND_API_KEY isn&apos;t set. No email was actually sent.
+                  </p>
+                )}
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
