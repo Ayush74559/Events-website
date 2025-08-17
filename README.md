@@ -243,3 +243,17 @@ For support or inquiries about photography services:
 **Made with ❤️ in Dehradun, Uttarakhand**
 
 *This project was built to showcase professional photography services and provide an excellent user experience for potential clients.*
+
+## 📧 Email (Contact form)
+
+The Contact page uses an API route (`/api/contact`) to send emails via Resend.
+
+Setup:
+- Copy `.env.example` to `.env.local` and fill values:
+   - `RESEND_API_KEY` – your Resend API key
+   - `CONTACT_TO_EMAIL` – destination (defaults to `aayush1628jaat@gmail.com`)
+   - `CONTACT_FROM_EMAIL` – from address (use a verified domain)
+
+Notes:
+- In production (e.g., Vercel), set these env vars in project settings.
+- After saving env vars, redeploy or restart the dev server.
