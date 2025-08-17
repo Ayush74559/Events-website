@@ -275,7 +275,7 @@ export default function TestimonialsSection() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2, duration: 0.6 }}
                     >
-                      "{filteredTestimonials[currentTestimonialIndex]?.text}"
+                      &quot;{filteredTestimonials[currentTestimonialIndex]?.text}&quot;
                     </motion.p>
                   </div>
                   
@@ -288,6 +288,7 @@ export default function TestimonialsSection() {
                   >
                     <div className="relative">
                       <div className="w-24 h-24 rounded-full overflow-hidden ring-4 ring-white dark:ring-zinc-700 shadow-xl">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img 
                           src={filteredTestimonials[currentTestimonialIndex]?.image} 
                           alt={filteredTestimonials[currentTestimonialIndex]?.name}
@@ -376,11 +377,11 @@ export default function TestimonialsSection() {
             Ready to Create Your Story?
           </h3>
           <p className="text-xl text-gray-300 dark:text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Join hundreds of satisfied clients who trusted us with their precious moments. Let's discuss your photography needs and create something beautiful together.
+            Join hundreds of satisfied clients who trusted us with their precious moments. Let&apos;s discuss your photography needs and create something beautiful together.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <motion.a
-              href="https://wa.me/917455932245?text=Hi! I'm interested in your photography services. Can you please share more details?"
+              href="https://wa.me/917455932245?text=Hi!%20I%27m%20interested%20in%20your%20photography%20services.%20Can%20you%20please%20share%20more%20details%3F"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -3 }}

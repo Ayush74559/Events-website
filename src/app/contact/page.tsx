@@ -122,10 +122,10 @@ export default function ContactPage() {
             animate="animate"
           >
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 bg-clip-text text-transparent leading-tight">
-              Let's Create Magic
+              Let&apos;s Create Magic
             </h1>
             <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl mx-auto">
-              Ready to capture your special moments? Get in touch and let's discuss how we can make your vision come to life.
+              Ready to capture your special moments? Get in touch and let&apos;s discuss how we can make your vision come to life.
             </p>
           </motion.div>
         </div>
@@ -194,7 +194,7 @@ export default function ContactPage() {
               Book Your Session
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Fill out the form below and we'll get back to you within 24 hours with a personalized quote.
+              Fill out the form below and we&apos;ll get back to you within 24 hours with a personalized quote.
             </p>
           </motion.div>
 
@@ -219,7 +219,7 @@ export default function ContactPage() {
                   Message Sent Successfully!
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400">
-                  Thank you for reaching out. We'll contact you within 24 hours to discuss your photography needs.
+                  Thank you for reaching out. We&apos;ll contact you within 24 hours to discuss your photography needs.
                 </p>
               </motion.div>
             ) : (
@@ -391,7 +391,7 @@ export default function ContactPage() {
                   { name: "Instagram", icon: "📷", followers: "12.5K", color: "from-pink-500 to-purple-500", handle: "@ayush_chaudhary_032", link: "https://www.instagram.com/ayush_chaudhary_032/" },
                   { name: "Facebook", icon: "📘", followers: "8.2K", color: "from-blue-600 to-blue-500", handle: "Dehradun Photography", link: "#" },
                   { name: "YouTube", icon: "🎥", followers: "3.4K", color: "from-red-500 to-red-600", handle: "Dehradun Photo Studio", link: "#" },
-                  { name: "WhatsApp", icon: "💬", followers: "24/7", color: "from-green-500 to-green-600", handle: "+91 74559 32245", link: "https://wa.me/917455932245?text=Hi! I'm interested in your photography services. Can you please share more details?" }
+                  { name: "WhatsApp", icon: "💬", followers: "24/7", color: "from-green-500 to-green-600", handle: "+91 74559 32245", link: "https://wa.me/917455932245?text=Hi!%20I%27m%20interested%20in%20your%20photography%20services.%20Can%20you%20please%20share%20more%20details%3F" }
                 ].map((social, index) => (
                   <motion.a
                     key={index}

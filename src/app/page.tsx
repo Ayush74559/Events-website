@@ -4,6 +4,7 @@
 "use client";
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import EventCard from "../components/EventCard";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -56,12 +57,12 @@ function HeroWithMouseBg() {
       >
         Explore, connect, and experience the best events around you. Professional Photography & Video Shoot Services in Dehradun — Weddings, Corporate Events, Birthdays, Fashion Shoots & More.
       </motion.p>
-      <a
+      <Link
         href="/events"
         className="relative z-10 px-12 py-5 rounded-full bg-blue-600 text-white font-bold shadow-xl hover:bg-pink-500 transition-colors text-xl hover:scale-105 transform transition-transform duration-300"
       >
         Book Now
-      </a>
+      </Link>
     </div>
   );
 }
@@ -226,25 +227,25 @@ function EventsCarousel() {
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
               Ready to discover your next amazing event?
             </p>
-            <motion.a
-              href="/events"
-              whileHover={{ scale: 1.05, y: -5 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-4 bg-gradient-to-r from-blue-600 to-pink-600 hover:from-blue-700 hover:to-pink-700 text-white px-12 py-6 rounded-full font-bold text-lg tracking-wider shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 group relative overflow-hidden"
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/10 to-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
-              <span className="relative z-10">EXPLORE ALL EVENTS</span>
-              <motion.svg 
-                className="w-6 h-6 relative z-10" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-                animate={{ x: [0, 5, 0] }}
-                transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+            <motion.div whileHover={{ scale: 1.05, y: -5 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                href="/events"
+                className="inline-flex items-center gap-4 bg-gradient-to-r from-blue-600 to-pink-600 hover:from-blue-700 hover:to-pink-700 text-white px-12 py-6 rounded-full font-bold text-lg tracking-wider shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 group relative overflow-hidden"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </motion.svg>
-            </motion.a>
+                <span className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/10 to-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
+                <span className="relative z-10">EXPLORE ALL EVENTS</span>
+                <motion.svg 
+                  className="w-6 h-6 relative z-10" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </motion.svg>
+              </Link>
+            </motion.div>
           </motion.div>
           
           {/* Trust Indicators */}

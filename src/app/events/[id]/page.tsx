@@ -34,6 +34,7 @@ export default function EventDetailsPage({ params }: PageProps) {
       <Navbar />
       <main className="max-w-3xl mx-auto px-4 py-24">
         <div className="mb-8">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={event.image} alt={event.title} className="w-full h-64 object-cover rounded-xl mb-4" />
           <h1 className="text-3xl font-bold mb-2">{event.title}</h1>
           <p className="text-zinc-500 mb-2">{event.date}</p>

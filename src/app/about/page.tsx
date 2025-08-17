@@ -92,7 +92,7 @@ export default function AboutPage() {
             animate="animate"
           >
             <p className="text-2xl sm:text-3xl font-light text-white mb-6 italic">
-              "We don't just take pictures, we create stories."
+              &quot;We don&apos;t just take pictures, we create stories.&quot;
             </p>
             <p className="text-lg text-gray-200 leading-relaxed max-w-3xl mx-auto">
               Located in the heart of Dehradun, we are a team of passionate photographers and videographers dedicated to capturing your special moments in the most beautiful way. From candid wedding shots to high-end cinematic films, we ensure every memory stays alive forever.
@@ -273,7 +273,7 @@ export default function AboutPage() {
               Ready to Create Your Story?
             </h2>
             <p className="text-xl mb-8 opacity-90 leading-relaxed">
-              Let's capture your special moments and create memories that will last a lifetime. 
+              Let&apos;s capture your special moments and create memories that will last a lifetime. 
               Get in touch with us today to discuss your photography and videography needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
@@ -295,7 +295,7 @@ export default function AboutPage() {
                 <span>📷</span> Follow on Instagram
               </motion.a>
               <motion.a
-                href="https://wa.me/917455932245?text=Hi! I'm interested in your photography services. Can you please share more details?"
+                href="https://wa.me/917455932245?text=Hi!%20I%27m%20interested%20in%20your%20photography%20services.%20Can%20you%20please%20share%20more%20details%3F"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300 flex items-center gap-2"

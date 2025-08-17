@@ -1,5 +1,4 @@
 "use client";
-import ParallaxSection from "../../components/ParallaxSection";
 import MouseParallax from "../../components/MouseParallax";
 import EventCard from "../../components/EventCard";
 import Navbar from "../../components/Navbar";
@@ -9,12 +8,24 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import events from "../../utils/dummyEvents";
 
-const allCategories: string[] = Array.from(new Set((events as { category?: string }[]).map((e) => e.category || "General")));
+// Event type derived from utils/dummyEvents.js
+interface EventItem {
+  title: string;
+  date: string;
+  category?: string;
+  description: string;
+  image: string;
+}
+
+const typedEvents = events as unknown as EventItem[];
+const allCategories: string[] = Array.from(
+  new Set(typedEvents.map((e) => e.category || "General"))
+);
 
 export default function EventsPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedDate, setSelectedDate] = useState("");
-  const filteredEvents = (events as { category?: string; date: string }[]).filter((event) => {
+  const filteredEvents: EventItem[] = typedEvents.filter((event) => {
     const matchCategory = selectedCategory === "All" || (event.category || "General") === selectedCategory;
     const matchDate = !selectedDate || event.date === selectedDate;
     return matchCategory && matchDate;
@@ -196,7 +207,7 @@ export default function EventsPage() {
                   </div>
                 </motion.div>
               ) : (
-                filteredEvents.map((event: any, i: number) => (
+                filteredEvents.map((event: EventItem, i: number) => (
                   <motion.div
                     key={i}
                     initial={{ opacity: 0, y: 60, scale: 0.9 }}
