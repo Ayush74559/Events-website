@@ -1,11 +1,16 @@
 "use client";
-import { useState } from "react";
+import { useState, use } from "react";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
 import events from "../../../utils/dummyEvents";
 
-export default function EventDetailsPage({ params }: { params: { id: string } }) {
-  const event = events[parseInt(params.id, 10)] || events[0];
+interface PageProps {
+  params: Promise<{ id: string }>;
+}
+
+export default function EventDetailsPage({ params }: PageProps) {
+  const { id } = use(params);
+  const event = events[parseInt(id, 10)] || events[0];
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", tickets: 1 });
   const [success, setSuccess] = useState(false);
@@ -17,7 +22,7 @@ export default function EventDetailsPage({ params }: { params: { id: string } })
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const bookings = JSON.parse(localStorage.getItem("bookings") || "[]");
-    bookings.push({ ...form, eventId: params.id, eventTitle: event.title });
+    bookings.push({ ...form, eventId: id, eventTitle: event.title });
     localStorage.setItem("bookings", JSON.stringify(bookings));
     setSuccess(true);
     setShowForm(false);
