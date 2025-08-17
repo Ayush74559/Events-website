@@ -30,7 +30,13 @@ export async function POST(req: Request) {
       );
     }
 
-  if (!process.env.RESEND_API_KEY) {
+    if (!process.env.RESEND_API_KEY) {
+      // In development, simulate success so local testing doesn't block on secrets
+      if (process.env.NODE_ENV !== "production") {
+        console.warn("[contact] RESEND_API_KEY missing; simulating email send in development.");
+        return NextResponse.json({ ok: true, simulated: true });
+      }
+      // In production, require proper configuration
       return NextResponse.json(
         { error: "Email service not configured" },
         { status: 500 }
@@ -39,7 +45,8 @@ export async function POST(req: Request) {
 
     const subject = `New Inquiry from ${name}${eventType ? ` • ${eventType}` : ""}`;
   const toEmail = process.env.CONTACT_TO_EMAIL || "aayush1628jaat@gmail.com";
-    const fromEmail = process.env.CONTACT_FROM_EMAIL || "noreply@ayush.dev";
+  // Use Resend onboarding address by default for safer dev/testing
+  const fromEmail = process.env.CONTACT_FROM_EMAIL || "Acme <onboarding@resend.dev>";
 
     const html = `
       <div>
